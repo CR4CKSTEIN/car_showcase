@@ -3,12 +3,14 @@ export async function fetchCars() {
             'X-RapidAPI-Key': 'b0b37d4243mshaa12e374815657fp1cbe2ajsnf5023878bffb',
             'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
     }
-    const response = await fetch ('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla', {headers: headers,});
+    const response = await fetch ('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=carrera', {headers: headers,});
 
     const result = await response.json();
 
     return result;
 }
+
+
 
 export const calculateRent = (city_mpg: number, year: number) => {
     const basePricePerDay = 50; // Base rental price per day in dollars
@@ -26,3 +28,7 @@ export const calculateRent = (city_mpg: number, year: number) => {
 
     return rentalRatePerDay.toFixed(0);
 };
+
+export const generateCarImageUrl = (car: CarProps, angle? : string) => {
+    
+}
